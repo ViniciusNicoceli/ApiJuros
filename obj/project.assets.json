@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dev\\testeef\\testeef.csproj",
-      "projectName": "testeef",
-      "projectPath": "C:\\Users\\dev\\testeef\\testeef.csproj",
+      "projectUniqueName": "C:\\Users\\dev\\api\\api.csproj",
+      "projectName": "api",
+      "projectPath": "C:\\Users\\dev\\api\\api.csproj",
       "packagesPath": "C:\\Users\\vinicius.nicoceli\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dev\\testeef\\obj\\",
+      "outputPath": "C:\\Users\\dev\\api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -49,10 +49,24 @@
     "frameworks": {
       "netcoreapp3.1": {
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
