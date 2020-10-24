@@ -34,7 +34,7 @@ namespace testeef.Controllers
         [HttpGet("showmethecode")]
         public string ShowMeTheCode()
         {
-            return "teste";
+            return "https://github.com/ViniciusNicoceli/ApiJuros";
         }
     }
 }
