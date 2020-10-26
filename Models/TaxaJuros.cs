@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 
 
-namespace testeef.Models
+namespace api.Models
 {
     public class TaxaJuros
     {

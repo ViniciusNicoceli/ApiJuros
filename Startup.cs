@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Swashbuckle.AspNetCore.Swagger;
+using Swashbuckle.Swagger;
 
 namespace testeef
 {
@@ -26,6 +28,22 @@ namespace testeef
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc(
+                            "v1",
+                            new Microsoft.OpenApi.Models.OpenApiInfo
+                            {
+                                Version="1.0",
+                                Title="Api de Calculo De Juros",
+                                Description="Api feita para realizar cálculo de juros.",
+                                Contact = new Microsoft.OpenApi.Models.OpenApiContact
+                                {
+                                    Name="Vinicius Nicoceli",
+                                    Email="viniciusnicoceli@gmail.com"
+                                }
+                            });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -35,6 +53,14 @@ namespace testeef
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+            app.UseDeveloperExceptionPage();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("v1/swagger.json", "API Calculo de Juros");
+
+            });
 
             app.UseHttpsRedirection();
 
