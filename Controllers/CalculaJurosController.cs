@@ -4,32 +4,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using testeef.Models;
+using api.Models;
+using api.Utils;
+using Microsoft.OpenApi.Exceptions;
 
-
-namespace testeef.Controllers
+namespace api.Controllers
 {
     [Route("ApiCalculos")]
     public class CalculaJurosController : Controller
     {
-        [HttpGet("calculaJuros")]
-        public decimal CalcularJuros(decimal valorInicial, int tempo)
+        [HttpPost("calculaJuros")]
+        public string CalcularJuros(decimal valorInicial, int tempo)
         {
-            var valorFinal = RetornaValorComJurosComposto(valorInicial, tempo);
+            try
+            {
+                var MensagemDeValidacao = CalculoDeJuros.ValidarValorInicialETempo(valorInicial, tempo);
+                if (MensagemDeValidacao != string.Empty)
+                    throw new Exception(MensagemDeValidacao);
 
-            return decimal.Round(valorFinal, 2, MidpointRounding.AwayFromZero);
-        }
+                var valorFinal = CalculoDeJuros.RetornaValorComJurosComposto(valorInicial, tempo);
 
-        public decimal RetornaValorComJurosComposto(decimal valorInicial, int Tempo )
-        {
-            var TaxaJuros = new TaxaJuros().Valor;
-            var valor = valorInicial;
-            for(int meses=0;meses<Tempo;meses++){
-                valor += valor * TaxaJuros;
+                return decimal.Round(valorFinal, 2, MidpointRounding.AwayFromZero).ToString();
             }
+            catch (Exception e)
+            {
 
-            return valor;
+                throw new OpenApiException($"Erro Ao Calcular Juros: {e.Message}");
+            }
         }
+
+        
 
         [HttpGet("showmethecode")]
         public string ShowMeTheCode()

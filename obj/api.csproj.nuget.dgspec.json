@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dev\\api\\api.csproj": {}
+    "D:\\Users\\T-Gamer\\Source\\Repos\\api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dev\\api\\api.csproj": {
+    "D:\\Users\\T-Gamer\\Source\\Repos\\api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dev\\api\\api.csproj",
+        "projectUniqueName": "D:\\Users\\T-Gamer\\Source\\Repos\\api.csproj",
         "projectName": "api",
-        "projectPath": "C:\\Users\\dev\\api\\api.csproj",
-        "packagesPath": "C:\\Users\\vinicius.nicoceli\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dev\\api\\obj\\",
+        "projectPath": "D:\\Users\\T-Gamer\\Source\\Repos\\api.csproj",
+        "packagesPath": "C:\\Users\\T-Gamer\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\T-Gamer\\Source\\Repos\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\vinicius.nicoceli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\T-Gamer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,8 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://dev.benner.com.br/packages/nuget": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -41,6 +37,16 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            },
+            "Swashbuckle.Core": {
+              "target": "Package",
+              "version": "[5.6.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -59,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "D:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
